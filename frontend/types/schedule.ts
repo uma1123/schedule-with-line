@@ -2,7 +2,8 @@ export interface Schedule {
   id: number;
   lineUserId: string;
   title: string;
-  dateTime: string;
+  startTime: string;
+  endTime: string;
   category: "プライベート" | "バイト" | "学校" | "就活" | "その他";
   createdAt: string;
   updatedAt: string;
