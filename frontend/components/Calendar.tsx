@@ -29,7 +29,7 @@ const Calendar = () => {
   const getSchedulesForDate = (date: number) => {
     const targetDate = new Date(year, month, date);
     return schedules.filter((s) => {
-      const scheduleDate = new Date(s.dateTime);
+      const scheduleDate = new Date(s.startTime);
       return scheduleDate.toDateString() === targetDate.toDateString();
     });
   };
@@ -129,13 +129,13 @@ const Calendar = () => {
                         CATEGORY_COLORS[schedule.category]
                       }`}
                       title={`${schedule.title} - ${new Date(
-                        schedule.dateTime
+                        schedule.startTime
                       ).toLocaleTimeString([], {
                         hour: "2-digit",
                         minute: "2-digit",
                       })}`}
                     >
-                      {new Date(schedule.dateTime).toLocaleTimeString([], {
+                      {new Date(schedule.startTime).toLocaleTimeString([], {
                         hour: "2-digit",
                         minute: "2-digit",
                       })}{" "}
